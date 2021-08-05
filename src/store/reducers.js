@@ -1,6 +1,6 @@
 import { CREATE_TODO, REMOVE_TODO, COMPLETE_TODO } from "./actions";
 
-export const todos = (state = [], action) => {
+export const todosReducer = (state = [], action) => {
 
     const {type, payload} = action;
 

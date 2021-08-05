@@ -14,13 +14,13 @@ Through the use of redux we can reduce the need to propogate variables through m
 
 * First, decide what data needs to be housed in the store and create actions for the data. An action is an object that has a type and any possible associated payload. The type is a string that is checked by a reducer function and appropriate action is taken. An example of Action: 
 
-        ``` Javascript
-        export const CREATE_TODO = 'CREATE_TODO';   // Action type, has to be a string
-        export const createTodo = text => ({        // Action creator, a function that returns an action object. {type, payload}
-            type: CREATE_TODO,
-            payload: { text },
-        });
+    ``` Javascript
+    export const CREATE_TODO = 'CREATE_TODO';   // Action type, has to be a string
+    export const createTodo = text => ({        // Action creator, a function that returns an action object. {type, payload}
+        type: CREATE_TODO,
+        payload: { text },
+    });
 
-        ```
+    ```
 
 * 

@@ -3,10 +3,8 @@ import React, { useState } from 'react';
 import { connect } from "react-redux";
 import {createTodo} from '../store/actions'
 
-const NewTodoForm = ({todos, onCreatePressed}) => {
+const NewTodoForm = ({ onCreatePressed}) => {
     const [inputValue, setinputValue] = useState('');
-
-    console.log(todos);
 
     return (
         <div>
@@ -17,9 +15,7 @@ const NewTodoForm = ({todos, onCreatePressed}) => {
                 onChange={(e) => {setinputValue(e.target.value);}}    
             />
             <button onClick={()=>{
-                console.log("btn clicked");
                 onCreatePressed(inputValue);
-                console.log(inputValue);
             }}>Create Todo</button>
         </div>
     );

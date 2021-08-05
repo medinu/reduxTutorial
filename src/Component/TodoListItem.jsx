@@ -3,7 +3,7 @@ import React from 'react';
 import { removeTodo, completeTodo } from '../store/actions';
 import { connect } from "react-redux";
 
-const TodoListItem = (({todo, onRemovePressed, onCompletePressed}) =>{
+const TodoListItem = (({todo, onCompletePressed, onRemovePressed}) =>{
     const todoStyle = {
         backgroundColor: "hsla(0, 100%, 50%, 0.3)",
         border: "2px solid black",
@@ -26,9 +26,14 @@ const TodoListItem = (({todo, onRemovePressed, onCompletePressed}) =>{
     )
 })
 
+
+const mapStateToProps = state => ({
+    todos: state.todos
+});
+
 const mapDispatchToProps = dispatch =>({
     onRemovePressed: (text) => dispatch(removeTodo(text)),
     onCompletePressed: (text) => dispatch(completeTodo(text)),
 })
 
-export default connect(null, mapDispatchToProps)(TodoListItem);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoListItem);

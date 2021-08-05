@@ -15,6 +15,7 @@ export const todos = (state = [], action) => {
 
             return (text.length > 0 ) ? state.concat(newTodo) : state;
         }
+        
         case REMOVE_TODO: {
             const {text} = payload;
         
@@ -28,11 +29,8 @@ export const todos = (state = [], action) => {
                 if (todo.text === text){
                     todo.isCompleted = true;
                 }
-
                 return todo;
             });
-
-            console.log (newState);
 
             return newState;
         }
